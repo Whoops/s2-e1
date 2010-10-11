@@ -1,0 +1,25 @@
+Welcome to the Digg Bot mailer!
+
+In order to get a list of topics simply send 
+an e-mail with the subject 'topics' to 
+digg-bot@waltonhoops.com
+
+In order to get a list of recent articles
+you may send an e-mail with the subject 'articles'.
+The articles command may take the following optional
+arguments.
+  limit --Limits the number of articles which may be
+          returned by the search (default 20)
+  topic --The short name of the topic (appears inside 
+          (parens) in the topic list) for which to find
+          articles (defaults to none (all topics))
+
+In order to specify an argument, simply put the argument
+name in the body of the message, followed by a colon,
+then a space, then the value.  For example:
+
+limit: 50
+topic: entertainment
+
+will get the first 50 articles with the topic 
+'entertainment'.

@@ -1,0 +1,14 @@
+mail:
+  pop3:
+    :address: mail.waltonhoops.com
+    :port: 995
+    :user_name: digg-bot@waltonhoops.com
+    :password: i*4hsS?t
+    :enable_ssl: true
+  smtp:
+    :address: mail.waltonhoops.com
+    :port: 587
+    :user_name: digg-bot@waltonhoops.com
+    :password: i*4hsS?t
+    :authentication: plain
+    :enable_starttls_auto: false #because we can't ignore ssl errors with the mail gem
