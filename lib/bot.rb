@@ -2,7 +2,6 @@ $LOAD_PATH << File.dirname(__FILE__)
 require 'mailer'
 require 'digg'
 require 'yaml'
-require 'ruby-debug'
 
 module DiggBot
   
