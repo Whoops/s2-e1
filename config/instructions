@@ -1,5 +1,7 @@
 Welcome to the Digg Bot mailer!
 
+At this time, all interactions must be plain text
+
 In order to get a list of topics simply send 
 an e-mail with the subject 'topics' to 
 digg-bot@waltonhoops.com
@@ -23,3 +25,6 @@ topic: entertainment
 
 will get the first 50 articles with the topic 
 'entertainment'.
+
+To recieve these instructions at any time, send an
+e-mail with the subject 'help'.

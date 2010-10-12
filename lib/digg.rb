@@ -6,12 +6,18 @@ module DiggBot
     API_URL='http://services.digg.com/2.0/'
 
     def self.get_topics()
-      fetch("topic.getAll")[:topics]
+      fetch("topic.getAll")[:topics].inject("") do |str, topic|        
+        "#{str}#{topic[:name]} (#{topic[:short_name]})\n"
+      end
     end
 
-    def self.get_top_stories(topic=nil, limit=20)
+    def self.get_articles(topic=nil, limit=20)
       args=arg_string(:topic=>topic,:limit=>limit)
-      fetch("story.getTopNews#{args}")[:stories]
+      fetch("story.getTopNews#{args}")[:stories].inject("") do |str, article|
+        str+="#{article[:title]}\n"
+        str+="#{article[:description]}\n"
+        str+="#{article[:url]}\n\n"
+      end
     end
 
     def self.fetch(uri)
