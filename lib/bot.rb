@@ -16,17 +16,20 @@ module DiggBot
     Mailer.config(config['mail'])
     
     Mailer.get_messages.each do |message|
-      case (message.subject.downcase)
-      when 'topics' then
-        Mailer.reply(message,topics())
-      when 'articles' then
-        begin
+      begin
+        raise BadParameterError unless message.subject
+        case (message.subject.downcase)
+        when 'topics' then
+          Mailer.reply(message,topics())
+        when 'articles' then
+          
           Mailer.reply(message,articles(message.body))
-        rescue BadParameterError
-          Mailer.reply(message,"Invalid Format")
+          
+        else
+          Mailer.reply(message,instructions)
         end
-      else
-        Mailer.reply(message,instructions)
+      rescue BadParameterError
+        Mailer.reply(message,"Invalid Format")
       end
     end
   end
